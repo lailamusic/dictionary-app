@@ -1,0 +1,12 @@
+form {
+  margin-top: 3rem;
+}
+
+form input[name="word"],
+form input[name="synonym"] {
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 2px solid whitesmoke;
+  border-radius: 0;
+}
