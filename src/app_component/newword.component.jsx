@@ -1,5 +1,5 @@
 import React from "react";
-import "./newword.style.css";
+import "./AddNew.css";
 
 const Form = props => {
   return (

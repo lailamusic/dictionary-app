@@ -1,18 +1,25 @@
 import React from 'react';
-import logo from './vector-key.svg';
+import logo from './bookapp3.png';
 import './App.css';
-import Addnew from "./app_component/first.component";
+import Button from './app_component/Button';
+import AddNew from './app_component/AddNew';
+import Form from './app_component/newword.component.jsx';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          key.
         </p>
+        <img src={logo} className="App-logo" alt="logo">
+        </img>
         <p>
-          Add new word.
+        </p>
+        <AddNew/>
+        <Form/>
+        <button className="addit" onclick="handleclick()">
+        </button>
+        <p>
         </p>
       </header>
     </div>

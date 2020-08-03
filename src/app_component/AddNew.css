@@ -1,0 +1,16 @@
+.AddNew {
+    padding: 22px;
+    margin: 8px 20px;
+    width: 150px;
+    height: 3px;
+    border: none;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    color: #F56329;
+    background-image: url('searchiconn.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 45px;
+    resize: none;
+    pointer-events: auto;
+}
