@@ -6,7 +6,7 @@ class AddNew extends Component {
   render() {
     // You can use them as regular CSS styles
     return <div className="AddNew" > </div>;
-    AddNew.style.pointerEvents="auto (default)";
+    //AddNew.style.pointerEvents="auto (default)";
     //var searchbkgnd = document.getElementById("searchiconn.png");
     //searchbkgnd.innerCSS = 'searchicon.png';
     }

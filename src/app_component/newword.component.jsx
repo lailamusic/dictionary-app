@@ -1,45 +1,49 @@
-import React from "react";
-import "./AddNew.css";
+import React from 'react'; import ReactDOM from 'react-dom';
+import logo from './bookapp3.png'; import './App.css';
+//import Button from './app_component/Button';
+// *import AddNew from './app_component/AddNew';
+class App extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        inBox1: undefined, inBox2: undefined
+      };
+      this.handleInputChange = this.handleInputChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleInputChange(event) {
+      const target = event.target;
+      //const value = target.type === 'checkbox' ? target.checked : target.value;
+      const name = target.name;
 
-const Form = props => {
+      this.setState({
+        [name]: value
+    });
+   }
+    handleSubmit(event) {
+      event.preventDefault();
+    }
+
+  render() {
   return (
-    <div className="container h-100">
-      <form onSubmit={props.loadweather}>
-        <div>{props.error ? error() : ""}</div>
-        <div className="row">
-          <div className="col-md-3 offset-md-2">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="new word"
-              name="word"
-              autoComplete="off"
-            />
-          </div>
-          <div className="col-md-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="synonym"
-              name="synonym"
-              autoComplete="off"
-            />
-          </div>
-          <div className="col-md-3 mt-md-0 mt-2 text-md-left ">
-            <button className="btn btn-warning">Add</button>
-          </div>
-        </div>
-      </form>
+    <div className="App">
+      <header className="App-header">
+        <p/>
+        <img src={logo} className="App-logo" alt="logo"/>
+        <p/>
+        <form onSubmit={this.handleSubmit} id="appForm">
+          <input name="inBox1" type="text" className="inBox" placeholder=
+          "add new word" autoComplete="off" value={this.state.inBox1} onChange={this.handleInputChange}/>
+          <p/>
+          <input name="inBox2" type="text" className="inBox" placeholder=
+          "synonym" autoComplete="off" value={this.state.inBox2} onChange={this.handleInputChange}/>
+        </form>
+        <button type="submit" name="submit" className="enterWord"/>
+        <p/>
+      </header>
     </div>
   );
-};
+}
+}
 
-const error = props => {
-  return (
-    <div className="alert alert-danger mx-5" role="alert">
-      Please Enter City and Country...!
-    </div>
-  );
-};
-
-export default Form;
+export default App;
