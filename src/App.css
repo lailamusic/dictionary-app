@@ -1,69 +1,215 @@
+/* 1 -> Application style */
+
 .App {
-  text-align: center;
+  //text-align: center;
   background-color: #EBE8F2;
   font-family: 'IBM Plex Mono';
 }
-
 .App-logo {
   height: 90px;
+  width: 73px;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 60px;
   pointer-events: none;
+  z-index: 10;
 }
-
 .App-header {
   background-color: #EBE8F2;
-  min-height: 80vh;
+  min-height: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  //justify-content: center;
   font-size: calc(12px + 2vmin);
   color: #1E9577;
+  z-index: 1;
 }
 
-.inBox {
-  padding: 20px;
-  width: 100px; height: 5px;
-  border: none; border-radius: 15px; outline: none;
-  background-color: #FFFFFF; color: #F56329;
-  align-items: center; justify-content: center;
-  resize: none;
-  pointer-events: auto;
-  display: inline-block;
-  font-family: 'IBM Plex Mono';
+.App-content {
+  background-color: #EBE8F2;
+  height: 350px;
+  width: relative;
 }
 
-.inBox:hover {
-  padding: 20px;
-  width: 200px; height: 5px;
-  border: none; border-radius: 15px; outline: none;
-  background-color: #FFFFFF; color: #F56329;
-  align-items: center; justify-content: center;
+/* 2 -> Block style */
+
+.App-Lblock {
+  float: left; height: 300px; width: 45%; min-width: 240px;
+  border-radius: 15px;
+  background-color: #E0DBEB;
+  position: relative;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: hidden;
+  z-index: 5;
+}
+.App-Rblock {
+  float: right; height: 300px; width: 45%; min-width: 240px;
+  border-radius: 15px;
+  background-color: #E0DBEB;
+  position: relative;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.App-Lblock:hover {
   resize: none;
+  background-color: #ECE8F3;
   pointer-events: auto;
-  display: inline-block;
-  transition: width 0.5s;
+  transition: box-shadow 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
+  0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.App-Rblock:hover {
+  resize: none;
+  background-color: #ECE8F3;
+  pointer-events: auto;
+  transition: box-shadow 0.4s;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
   0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+/* 3 -> Input box styl */
+
+.inBox-word {
+  padding: 20px; /* white space around text */
+  width: 40%; height: 5px;
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  position: absolute;
+  border: none; border-radius: 15px; outline: none;
+  background-color: #FFFFFF; color: #F56329;
+  text-align: center;
+  resize: none;
+  pointer-events: auto;
+  display: inline-block;
+  font-family: 'IBM Plex Mono';
+  z-index: 50;
+}
+.inBox-syn {
+  padding: 20px; /* white space around text */
+  width: 40%; height: 5px;
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 100px;
+  position: absolute;
+  border: none; border-radius: 15px; outline: none;
+  background-color: #FFFFFF; color: #F56329;
+  text-align: center;
+  resize: none;
+  pointer-events: auto;
+  display: inline-block;
+  font-family: 'IBM Plex Mono';
+  z-index: 50;
+}
+.inBox-find {
+  padding: 20px; /* white space around text */
+  width: 40%; height: 5px;
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  position: absolute;
+  border: none; border-radius: 15px; outline: none;
+  background-color: #FFFFFF; color: #F56329;
+  text-align: center;
+  resize: none;
+  pointer-events: auto;
+  display: inline-block;
+  font-family: 'IBM Plex Mono';
+  z-index: 50;
+}
+
+.inBox-word:hover {
+  width: 65%; height: 5px;
+  border: none; border-radius: 15px; outline: none;
+  align-items: center; justify-content: center;
+  resize: none;
+  pointer-events: auto;
+  display: inline-block;
+  transition: width 0.3s;
+}
+.inBox-syn:hover {
+  width: 65%; height: 5px;
+  border: none; border-radius: 15px; outline: none;
+  align-items: center; justify-content: center;
+  resize: none;
+  pointer-events: auto;
+  display: inline-block;
+  transition: width 0.3s;
+}
+.inBox-find:hover {
+  width: 65%; height: 5px;
+  border: none; border-radius: 15px; outline: none;
+  align-items: center; justify-content: center;
+  resize: none;
+  pointer-events: auto;
+  display: inline-block;
+  transition: width 0.3s;
+}
+
+/* 4 -> Button style */
+
 .enterWord {
   padding: 20px; width: 7px; height: 7px;
-  margin-top: 30px; margin-bottom: 70px;
+  margin-top: 170px; margin-bottom: 70px;
   border: none; border-radius: 30px; outline: none;
   background-color: #FFFFFF; color: #F56329;
-  background-image: url('searchiconOnn.png');
+  background-image: url('addicon1.png');
+  background-position: center; background-repeat: no-repeat;
+  resize: none;
+  pointer-events: auto;
+}
+.enterWord:hover {
+  padding: 20px; width: 7px; height: 7px;
+  margin-top: 170px; margin-bottom: 70px;
+  border: none; border-radius: 30px; outline: none;
+  background-color: #FFFFFF; color: #F56329;
+  background-image: url('addicon2.png');
+  transition: background-image 0.3s;
   background-position: center; background-repeat: no-repeat;
   resize: none;
   pointer-events: auto;
 }
 
-.enterWord:hover {
+.findWord {
   padding: 20px; width: 7px; height: 7px;
-  margin-top: 30px; margin-bottom: 70px;
+  margin-top: 105px; margin-bottom: 70px;
   border: none; border-radius: 30px; outline: none;
   background-color: #FFFFFF; color: #F56329;
-  background-image: url('searchicon.png');
+  background-image: url('findicon1.png');
   background-position: center; background-repeat: no-repeat;
   resize: none;
   pointer-events: auto;
+}
+.findWord:hover {
+  padding: 20px; width: 7px; height: 7px;
+  margin-top: 105px; margin-bottom: 70px;
+  border: none; border-radius: 30px; outline: none;
+  background-color: #FFFFFF; color: #F56329;
+  background-image: url('findicon2.png');
+  transition: background-image 0.3s;
+  background-position: center; background-repeat: no-repeat;
+  resize: none;
+  pointer-events: auto;
+}
+
+/* 5 -> Notification style */
+
+.notify {
+  padding: 10px; /* white space around text */
+  width: 60%; height: 5px;
+  margin-top: 235px;
+  position: absolute; text-align: center; color: #1E9577;
+  font-family: 'IBM Plex Mono'; font-weight: bold; font-size: 12px;
+  visibility: hidden; z-index: 100;
 }
