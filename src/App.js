@@ -26,27 +26,28 @@ handleClickL = event => {
   dictionary.push([word, synonym]);
   this.setState({ dictionary });
   {document.getElementById("Lnotify").style.visibility="visible"};
-  //<clearInputs/>
+  console.log(this.state.dictionary);
 };
-
 //function clearInputs() {
 //  setTimeout(function(){document.getElementById("inBox1").reset()}, 5);
 //  setTimeout(function(){document.getElementById("inBox2").reset()}, 5);
 //}
-
 handleClickR = event => {
   const { find, output } = this.state;
-  let a = this.state.dictionary;
+    let a = this.state.dictionary;
+  while (output.length) {
+    output.pop();
+  };
   for( let i = 0; i < a.length; i++){
     let child = a[i];
     for( let j = 0; j < 1; j++){
       if ( find === child[j] ) {
-        output.push(child[!j]);
+        output.push(child[(!j) ? 1 : 0]);
         this.setState({ output });
-        console.log(output);
       };
     }
   };
+
   {document.getElementById("Rnotify").style.visibility="visible"};
 };
 
@@ -83,7 +84,6 @@ return (
           "findWord" onClick={this.handleClickR}/>
         <div name="Rnotify" id="Rnotify" type="text" className=
           "notify">
-        {JSON.stringify(this.state.dictionary)}
         {JSON.stringify(this.state.output)}
         </div>
       </div>
