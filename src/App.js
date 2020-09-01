@@ -11,32 +11,43 @@ word: '',
 synonym: '',
 find: '',
 dictionary: [],
+a: '',
 output: [],
 };
 }
 
 handleWordChange = event => this.setState({ word: event.currentTarget.value });
 handleSynonymChange = event => this.setState({ synonym: event.currentTarget.value });
-//handleFindChange = event => this.setState({ find: event.currentTarget.value });
+handleFindChange = event => this.setState({ find: event.currentTarget.value });
 
-handleClick = event => {
+handleClickL = event => {
   const { dictionary, word, synonym } = this.state;
 // TODO insert word/synonym into this.state.dictionary only if that is not already present
-dictionary.push([word, synonym]);
-this.setState({ dictionary });
-//Lnotify.style.visibility = "visible";
-// if (x === y && x !== '') {
-// alert('A word cannot be its own synonym.'/* + this.state.value*/);
-// //event.preventDefault();
-// } else {
-// if (this.wordGroup.includes(x)) {
-// var k = this.wordGroup.indexOf(x);
-// var h = this.wordGroup[k];
-// this.wordGroup.splice(k, 1, h + '.' + y);}
-// this.wordGroup.push(z);
-// console.log(this.wordGroup);
-// this.setState({ text: this.wordGroup });
-//event.preventDefault();
+  dictionary.push([word, synonym]);
+  this.setState({ dictionary });
+  {document.getElementById("Lnotify").style.visibility="visible"};
+  //<clearInputs/>
+};
+
+//function clearInputs() {
+//  setTimeout(function(){document.getElementById("inBox1").reset()}, 5);
+//  setTimeout(function(){document.getElementById("inBox2").reset()}, 5);
+//}
+
+handleClickR = event => {
+  const { find, output } = this.state;
+  let a = this.state.dictionary;
+  for( let i = 0; i < a.length; i++){
+    let child = a[i];
+    for( let j = 0; j < 1; j++){
+      if ( find === child[j] ) {
+        output.push(child[!j]);
+        this.setState({ output });
+        console.log(output);
+      };
+    }
+  };
+  {document.getElementById("Rnotify").style.visibility="visible"};
 };
 
 render() {
@@ -59,8 +70,8 @@ return (
           "inBox-syn" placeholder="synonym" autoComplete=
           "off" value={this.state.synonym} onChange={this.handleSynonymChange}/>
         <button type="button" name="submit" className=
-          "enterWord" onClick={this.handleClick}/>
-        <div name="Lnotify" type="text" className=
+          "enterWord" onClick={this.handleClickL}/>
+        <div name="Lnotify" id="Lnotify" type="text" className=
           "notify">Your definition has been added!</div>
       </div>
 
@@ -69,8 +80,12 @@ return (
           "inBox-find" placeholder="find a word" autoComplete=
           "off" value={this.state.find} onChange={this.handleFindChange}/>
         <button type="button" name="find" className=
-          "findWord" onClick={this.handleClick}/>
+          "findWord" onClick={this.handleClickR}/>
+        <div name="Rnotify" id="Rnotify" type="text" className=
+          "notify">
         {JSON.stringify(this.state.dictionary)}
+        {JSON.stringify(this.state.output)}
+        </div>
       </div>
 
     </div>

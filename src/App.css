@@ -78,7 +78,7 @@
   0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-/* 3 -> Input box styl */
+/* 3 -> Input box style */
 
 .inBox-word {
   padding: 20px; /* white space around text */
@@ -179,7 +179,7 @@
   background-position: center; background-repeat: no-repeat;
   resize: none;
   pointer-events: auto;
-}
+  }
 
 .findWord {
   padding: 20px; width: 7px; height: 7px;
