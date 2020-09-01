@@ -205,11 +205,20 @@
 
 /* 5 -> Notification style */
 
-.notify {
+.Lnotify {
   padding: 10px; /* white space around text */
   width: 60%; height: 5px;
   margin-top: 235px;
   position: absolute; text-align: center; color: #1E9577;
   font-family: 'IBM Plex Mono'; font-weight: bold; font-size: 12px;
+  visibility: hidden; z-index: 100;
+}
+
+.Rnotify {
+  padding: 10px; /* white space around text */
+  width: 60%; height: 5px;
+  margin-top: 180px;
+  position: absolute; text-align: center; color: #1E9577;
+  font-family: 'IBM Plex Mono'; font-size: 16px;
   visibility: hidden; z-index: 100;
 }
