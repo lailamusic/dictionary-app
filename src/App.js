@@ -35,6 +35,7 @@ handleClickL = event => { // define actions for new word submission
 handleClickR = event => {
   const { find, output } = this.state; // variable initialization
     let a = this.state.dictionary; // set dictionary to a variable
+
   while (output.length) {
     output.pop(); // clear the output to display new search results
   };
@@ -52,6 +53,7 @@ handleClickR = event => {
       };
     }
   };
+
   {document.getElementById("Rnotify").style.visibility="visible"}; // show the output
 };
 
